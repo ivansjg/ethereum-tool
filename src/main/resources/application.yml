@@ -1,0 +1,33 @@
+# Prevent SpringBoot embedded web server to be started
+spring.main.web-application-type: none
+
+coingate-api:
+  url: https://api.coingate.com/
+
+ethereum:
+  # Ethereum Testnet:
+  # Goerli RPC URLs list: https://chainlist.org/chain/5
+  # Goerli Explorer: https://goerli.etherscan.io/
+  # Goerli faucets don't work really well, the only ones working are https://goerli-faucet.pk910.de/ and https://www.allthatnode.com/faucet/ethereum.dsrv.
+  # Others don't work or forces you to have some ETHs in mainnet for same address you want to fund.
+  # So is better to use Sepolia Testnet (https://www.alchemy.com/overviews/sepolia-testnet).
+  # Goerli USDT Faucet: https://faucet.goerli.linea.build/ (you need to connect MetaMask to it)
+  # Goerli USDT Contract Address: 0xfad6367E97217cC51b4cd838Cc086831f81d38C2
+  #networkChainId: 5
+  #nodeUrl: https://ethereum-goerli.publicnode.com/
+
+  # Sepolia RPC URL: https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>
+  # To get an API_KEY you need to sign up in alchemy.com . Then go to https://dashboard.alchemy.com/ and check your API_KEY
+  # Sepolia Explorer: https://sepolia.etherscan.io/
+  # Sepolia Faucet: https://sepoliafaucet.com/
+  # Sepolia USDT Faucet: https://chaindrop.org/?chainid=11155111&token=0x6175a8471c2122f778445e7e07a164250a19e661
+  # Sepolia USDT Contract Address: 0x6175a8471c2122f778445e7e07a164250a19e661
+  networkChainId: 11155111
+  nodeUrl: https://eth-sepolia.g.alchemy.com/v2/API_KEY
+
+  # Local Ganache server:
+  #networkChainId: 1337  # Is Ganache's default network chain ID
+  #nodeUrl: http://127.0.0.1:7545
+
+logging.level:
+  com.technest.ethereum.tool: INFO
